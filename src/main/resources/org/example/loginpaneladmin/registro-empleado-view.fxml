@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.loginpaneladmin.controller.RegistroEmpleadoController">
+
+    <!-- 🔵 TÍTULO -->
+    <top>
+        <Label text="Registrar Empleado"
+               style="-fx-font-size: 18px; -fx-padding: 15;" />
+    </top>
+
+    <!-- 🧾 FORMULARIO -->
+    <center>
+        <VBox spacing="12" alignment="CENTER"
+              style="-fx-padding: 20;">
+
+            <TextField fx:id="nameField" promptText="Nombre"/>
+            <TextField fx:id="ageField" promptText="Edad"/>
+            <TextField fx:id="genderField" promptText="Género"/>
+
+            <TextField fx:id="emailField" promptText="Email"/>
+            <TextField fx:id="phoneField" promptText="Teléfono"/>
+            <TextField fx:id="departmentField" promptText="Departamento"/>
+            <TextField fx:id="roleField" promptText="Cargo"/>
+
+            <Separator/>
+
+            <Button text="Crear Empleado"
+                    onAction="#handleCreate"
+                    prefWidth="200"/>
+
+            <Label fx:id="statusLabel"
+                   text=""
+                   style="-fx-text-fill: green;"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

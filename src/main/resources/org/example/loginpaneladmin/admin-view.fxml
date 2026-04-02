@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.loginpaneladmin.AdminController">
+
+    <!-- 🔵 CENTRO: menú principal -->
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+
+            <Button text="Perfil de Admin"
+                    prefWidth="220"
+                    onAction="#openAdminProfile"/>
+
+            <Button text="Add Empleado"
+                    prefWidth="220"
+                    onAction="#openAddEmployee"/>
+
+            <Button text="Lista de Fichajes"
+                    prefWidth="220"
+                    onAction="#openAttendanceList"/>
+
+            <Button text="Lista de Empleados"
+                    prefWidth="220"
+                    onAction="#openEmployeeList"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

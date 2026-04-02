@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.loginpaneladmin.controller.PerfilEmpleadoController">
+
+    <!-- 🔵 TÍTULO -->
+    <top>
+        <Label text="Perfil de Empleado"
+               style="-fx-font-size: 18px; -fx-padding: 15;" />
+    </top>
+
+    <!-- 🧍 CONTENIDO -->
+    <center>
+        <VBox spacing="12" alignment="CENTER"
+              style="-fx-padding: 20;">
+
+            <!-- 🧾 DATOS PERSONALES -->
+            <Label text="Datos Personales"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+            <TextField fx:id="idField" promptText="ID" editable="false"/>
+            <TextField fx:id="nameField" promptText="Nombre"/>
+            <TextField fx:id="ageField" promptText="Edad"/>
+            <TextField fx:id="genderField" promptText="Género"/>
+
+            <Separator/>
+
+            <!-- ⏱️ FICHAJE -->
+            <Label text="Fichaje"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+            <Label fx:id="statusLabel" text="Estado: Fuera de turno"
+                   style="-fx-text-fill: gray;"/>
+
+            <HBox spacing="10" alignment="CENTER">
+
+                <Button text="Fichar Entrada"
+                        onAction="#handleCheckIn"
+                        prefWidth="140"/>
+
+                <Button text="Fichar Salida"
+                        onAction="#handleCheckOut"
+                        prefWidth="140"/>
+
+            </HBox>
+
+            <!-- ⏱️ INFO EXTRA -->
+            <Label fx:id="lastCheckLabel"
+                   text="Último fichaje: --"
+                   style="-fx-text-fill: #555;"/>
+
+            <!-- 💾 GUARDAR DATOS -->
+            <Button text="Guardar cambios"
+                    onAction="#handleSave"
+                    prefWidth="200"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>
