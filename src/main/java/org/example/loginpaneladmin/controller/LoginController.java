@@ -1,9 +1,7 @@
-package org.example.loginpaneladmin.controller;
+package org.example.loginpaneladmin;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class LoginController {
 
@@ -14,13 +12,7 @@ public class LoginController {
     private PasswordField passwordField;
 
     @FXML
-    private Label errorLabel;
-
-    @FXML
-    private void initialize() {
-        // Ocultar error al iniciar la vista
-        errorLabel.setVisible(false);
-    }
+    private Label messageLabel;
 
     @FXML
     private void handleLogin() {
@@ -28,22 +20,20 @@ public class LoginController {
         String user = usernameField.getText();
         String pass = passwordField.getText();
 
-        // Evita NullPointerException si algún campo viene vacío
-        if (user == null || pass == null) {
-            showError("Rellena todos los campos");
+        if (user == null || user.isBlank() || pass == null || pass.isBlank()) {
+            messageLabel.setText("⚠ Rellena todos los campos");
             return;
         }
 
         if (user.equals("admin") && pass.equals("1234")) {
-            errorLabel.setVisible(false);
-            System.out.println("Login correcto");
-        } else {
-            showError("Credenciales incorrectas");
-        }
-    }
 
-    private void showError(String message) {
-        errorLabel.setText(message);
-        errorLabel.setVisible(true);
+            messageLabel.setText("✅ Correcto");
+
+            // 🔥 cambiar a dashboard (SIN cambiar Scene)
+            MainApp.loadView("/org/example/loginpaneladmin/dashboard-view.fxml");
+
+        } else {
+            messageLabel.setText("❌ Credenciales incorrectas");
+        }
     }
 }
