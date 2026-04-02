@@ -5,4 +5,6 @@ module org.example.loginpaneladmin {
 
     opens org.example.loginpaneladmin to javafx.fxml;
     exports org.example.loginpaneladmin;
+    exports org.example.loginpaneladmin.controller;
+    opens org.example.loginpaneladmin.controller to javafx.fxml;
 }

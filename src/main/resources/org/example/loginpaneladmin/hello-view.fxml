@@ -1,16 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.loginpaneladmin.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.loginpaneladmin.controller.LoginController"
+            style="-fx-background-image: url('/images/fondoLogin3FPRO.jpg');
+                   -fx-background-size: cover;">
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+    <!-- CENTRO -->
+    <center>
+        <VBox spacing="15"
+              alignment="CENTER"
+              style="-fx-background-color: #2a2a3d; -fx-background-radius: 15;"
+              maxWidth="350"
+              maxHeight="400">
+
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <!-- Título -->
+            <Label text="ADMIN LOGIN"
+                   style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+            <!-- Usuario -->
+            <TextField fx:id="usernameField"
+                       promptText="Usuario"
+                       style="-fx-background-radius: 8;"/>
+
+            <!-- Password -->
+            <PasswordField fx:id="passwordField"
+                           promptText="Contraseña"
+                           style="-fx-background-radius: 8;"/>
+
+            <!-- Botón login -->
+            <Button text="Iniciar sesión"
+                    fx:id="loginButton"
+                    onAction="#handleLogin"
+                    style="-fx-background-color: #4f6bed;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 8;
+                           -fx-font-weight: bold;"
+                    maxWidth="Infinity"/>
+
+            <!-- Mensaje error -->
+            <Label fx:id="errorLabel"
+                   textFill="red"
+                   visible="false"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>
